@@ -53,3 +53,13 @@ body {
     border: 12px none #000000;
   }
 }
+
+ul {
+  list-style-type: disc;  /* or circle, square, etc. */
+  padding-left: 20px;
+}
+
+ol {
+  list-style-type: decimal;
+  padding-left: 20px;
+}
