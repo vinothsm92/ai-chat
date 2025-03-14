@@ -7,7 +7,7 @@ import SpeechToText from "./SpeechToText";
 import TextToSpeech from "./TextToSpeech";
 import { Dispatch, SetStateAction, useMemo } from "react";
 import useDebounce from "@/hooks/useDebounce";
-import { dracula } from 'react-syntax-highlighter/dist/esm/styles/hljs'; 
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { ReactNode } from "react"; // Import ReactNode to type children
 import CodeBlock from "./CodeBlock/CodeBlock";
 
@@ -60,7 +60,7 @@ export default function Chat() {
   const lastMessage = useDebounce(renderMessages, 1000);
 
   // Define components for react-markdown with custom code block handling
-  const renderers = {
+  const renderers:any = {
     code: ({ inline, className, children }: { inline: boolean; className: string; children: ReactNode }) => {
       const language = className?.replace('language-', '');
       const value = String(children).replace(/\n$/, '');
@@ -94,7 +94,7 @@ export default function Chat() {
                   <span className="px-2">You</span>
                   <div className="flex flex-col items-center px-4 py-2 max-w-[90%] bg-orange-700/50 rounded-lg text-neutral-200 whitespace-pre-wrap">
                     {/* Apply background color for regular text/explanation */}
-                    <Markdown children={m?.content} components={renderers} />
+                    <Markdown components={renderers}>{m?.content}</Markdown>
                   </div>
                 </div>
               ) : (
@@ -102,7 +102,7 @@ export default function Chat() {
                   <span className="px-2">AI</span>
                   <div className="flex flex-col max-w-[90%] px-4 py-2 bg-[#1a1a1a] rounded-lg text-neutral-200 whitespace-pre-wrap">
                     {/* Apply background color for regular text/explanation */}
-                    <Markdown children={m?.content} components={renderers} />
+                    <Markdown components={renderers}>{m?.content}</Markdown>
                   </div>
                 </div>
               )

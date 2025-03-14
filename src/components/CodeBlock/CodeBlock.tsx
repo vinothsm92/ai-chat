@@ -11,7 +11,7 @@ export interface IProps {
   message?: Message[];
 }
 
-const customStyle = {
+const customStyle: any = {
   hljs: {
     background: '#1e1e1e', // VS Code background color (dark gray)
     color: '#d4d4d4', // VS Code text color (light gray)
