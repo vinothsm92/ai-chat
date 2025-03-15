@@ -83,6 +83,7 @@ export default function Chat() {
   };
 
   return (
+    <main className="flex min-h-screen flex-col items-center justify-start">
     <div className="flex flex-col w-full max-w-lg rounded-lg bg-white/10 h-full">
       {/* Chat Messages Container with Scroll */}
       <div className="flex-1 overflow-y-auto p-4" ref={chatRef}>
@@ -146,5 +147,6 @@ export default function Chat() {
         <TextToSpeech {...props} lastMessage={lastMessage} />
       </section>
     </div>
+    </main>
   );
 }
