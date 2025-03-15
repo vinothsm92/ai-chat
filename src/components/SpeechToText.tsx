@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { useEffect, useState, useRef } from 'react';
 import { IProps } from './Chat';
+import Recording from '@/assets/images/Recording.png'
+import Record from '@/assets/images/Record-light.png'
 
 const SpeechToText = ({ transcript, setTranscript, handleLogic }: IProps) => {
   const [isListening, setIsListening] = useState(false);
@@ -77,7 +79,7 @@ const SpeechToText = ({ transcript, setTranscript, handleLogic }: IProps) => {
               height='40'
               alt='record'
               onClick={startListening}
-              src="https://w7.pngwing.com/pngs/590/866/png-transparent-microphone-sound-recording-and-reproduction-voice-recorder-computer-icons-microphone-electronics-microphone-sound-thumbnail.png"
+              src={Record}
             />
         ) : (
             <Image
@@ -85,7 +87,7 @@ const SpeechToText = ({ transcript, setTranscript, handleLogic }: IProps) => {
               height='40'
               onClick={stopListening}
               alt='stop-record'
-            src="https://cdn-icons-png.flaticon.com/512/8705/8705412.png"
+              src={Recording}
           />
       )}
     </>
